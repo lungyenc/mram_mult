@@ -11,8 +11,7 @@
 import sys
 import math
 import numpy as np
-import matplotlib.pyplot as plt
-import MramSettings as ms
+import mram_mult.MramSettings as ms
 
 class MramMultSingleBit:
 
