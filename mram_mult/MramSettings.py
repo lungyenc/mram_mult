@@ -12,8 +12,8 @@ import math
 
 RES_P_MEAN = 2115   # Mean of the resistance of MRAM cells in P state
 RES_AP_MEAN = 4545  # Mean of the resistance of MRAM cell in ap state
-RES_P_STD = 112     # Standard variation of the resistance of MRAM cells in P
-RES_AP_STD = 241    # Standard variation of the resistance of MRAM cells in AP
+RES_P_STD = 112     # Standard deviation of the resistance of MRAM cells in P
+RES_AP_STD = 241    # Standard deviation of the resistance of MRAM cells in AP
 
 ########## DEFINITION END ###########
 
