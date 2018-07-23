@@ -23,8 +23,7 @@ class MramMultSingleBit:
         (self.nRow, self.nCol))
         self.wCon[:, :, 0] = np.random.normal(ms.capM, ms.capStd, 
         (self.nRow, self.nCol))      
-        print(self.wCon)
-
+        
     @classmethod
     def fromW(cls, w):
         return cls(np.size(w, 0), np.size(w,1))
@@ -57,17 +56,15 @@ class MramMultSingleBit:
                     y[k, n] = -self.nRow
                 else:
                     y[k, n] = self.nRow
-                print(str(k)+' '+str(n)+' '+str(m)+' '+str(acc)+' '+str(accShift)+' '+str(diff)+' '+str(ms.md)+' '+str(y[k,n]))
         return y
 
 ### Class Test ###
-if __name__ == '__main__':
+if __name__ == '__main__':   
     testR = 16
     testC = 2
     testXR = 1
     testXC = testR
     test = MramMultSingleBit(testR, testC)
-    # tes2 = MramMultSingleBit.fromW(np.zeros((3,2)))
     w = np.random.random((testR, testC))
     for i in range(testR):
         for j in range(testC):
