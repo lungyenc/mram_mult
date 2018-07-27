@@ -53,7 +53,6 @@ class MramMultSingleBit:
                 else:
                     wM[2*m, n] = (self.wCon[m, n, 3] + self.wCon[m, n, 1])/2
                     wM[2*m+1, n] = (-self.wCon[m, n, 3] + self.wCon[m, n, 1])/2
-        print(wM)
         # x mapping
         xM = np.zeros((x0, 2*x1))
         for k in range(x0):
@@ -63,8 +62,7 @@ class MramMultSingleBit:
                     xM[k, 2*m+1] = 1
                 else:
                     xM[k, 2*m] = 1
-                    xM[k, 2*m+1] = -1               
-        print(xM)     
+                    xM[k, 2*m+1] = -1                    
         # Multiplication
         y = np.dot(xM, wM)
         print(y)
