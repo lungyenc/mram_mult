@@ -67,16 +67,9 @@ class MramMultSingleBit:
         y = np.dot(xM, wM)
         print(y)
         # Perfect ADC readout
-        for k in range(x0):
-            for n in range(w1):
-                accShift = y[k, n] - self.nRow * ms.capM - 0.5*ms.md
-                diff = accShift // ms.md
-                if (diff >= 0 and diff <= self.nRow-2):
-                    y[k, n] = -self.nRow + 2*diff + 2
-                elif (diff <0):
-                    y[k, n] = -self.nRow
-                else:
-                    y[k, n] = self.nRow
+        y = (y - self.nRow * ms.capM - 0.5*ms.md) // ms.md
+        y = -self.nRow + 2*y + 2
+        y = np.clip(y, -self.nRow, self.nRow)
         return y
 
 ### Class Test ###
